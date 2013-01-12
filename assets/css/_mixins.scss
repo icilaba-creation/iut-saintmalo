@@ -1,0 +1,165 @@
+// @include iut-background-color;
+
+@mixin iut-background-color {
+	.gea & {
+		background: $gea-color;
+	}
+	.gim & {
+		background: $gim-color;
+	}
+	.rt & {
+		background: $rt-color;
+	}
+	.cj & {
+		background: $cj-color;
+	}
+	.cbsi & {
+		background: $cbsi-color;
+	}
+	.vie-etudiante & {
+		background: $vie-etudiante-color;
+	}
+	.espace-entreprises & {
+		background: $espace-entreprises-color;
+	}
+	.activites-recherche & {
+		background: $activites-recherche-color;
+	}
+	.iut-saintmalo &, .annexe & {
+		background: $iut-saintmalo-color;
+	}
+}
+
+// @include iut-color;
+
+@mixin iut-color {
+	.gea & {
+		color: $gea-color;
+	}
+	.gim & {
+		color: $gim-color;
+	}
+	.rt & {
+		color: $rt-color;
+	}
+	.cj & {
+		color: $cj-color;
+	}
+	.cbsi & {
+		color: $cbsi-color;
+	}
+	.vie-etudiante & {
+		color: $vie-etudiante-color;
+	}
+	.espace-entreprises & {
+		color: $espace-entreprises-color;
+	}
+	.activites-recherche & {
+		color: $activites-recherche-color;
+	}
+	.iut-saintmalo &, .annexe & {
+		color: $iut-saintmalo-color;
+	}
+}
+
+// @include menu-color;
+
+@mixin menu-color {
+	&.gea {
+		border-color: $gea-color;
+		&:hover {
+			background: $gea-color;
+		}
+	}
+	&.gim {
+		border-color: $gim-color;
+		&:hover {
+			background: $gim-color;
+		}
+	}
+	&.rt {
+		border-color: $rt-color;
+		&:hover {
+			background: $rt-color;
+		}
+	}
+	&.cj {
+		border-color: $cj-color;
+		&:hover {
+			background: $cj-color;
+		}
+	}
+	&.cbsi {
+		border-color: $cbsi-color;
+		&:hover {
+			background: $cbsi-color;
+		}
+	}
+	&.vie-etudiante {
+		border-color: $vie-etudiante-color;
+		&:hover {
+			background: $vie-etudiante-color;
+		}
+	}
+	&.espace-entreprises {
+		border-color: $espace-entreprises-color;
+		&:hover {
+			background: $espace-entreprises-color;
+		}
+	}
+	&.activites-recherche {
+		border-color: $activites-recherche-color;
+		&:hover {
+			background: $activites-recherche-color;
+		}
+	}
+	&.iut-saintmalo {
+		border-color: $iut-saintmalo-color;
+		&:hover {
+			background: $iut-saintmalo-color;
+		}
+	}
+}
+
+// @include reset-list;
+
+@mixin reset-list {
+	list-style: none;
+	padding-left: 0;
+	margin-left: 0;
+	
+	li {
+		padding-left: 0;
+		margin-left: 0;
+		list-style-image: none;
+		list-style-type: none;
+	}
+}
+
+// @include box-shadow(HORIZONTAL VERTICAL BLUR COLOR);
+
+@mixin box-shadow($shadow: 0 1px 3px rgba(0,0,0,.25)) {
+-webkit-box-shadow : $shadow;
+   -moz-box-shadow : $shadow;
+	    box-shadow : $shadow;
+}
+
+// @include transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
+
+@mixin transition($transition) {
+-webkit-transition : $transition;
+   -moz-transition : $transition;
+    -ms-transition : $transition;
+     -o-transition : $transition;
+        transition : $transition;
+}
+
+// @mixin rotate($deg);
+
+@mixin rotate($deg) {
+-webkit-transform : rotate($deg);
+   -moz-transform : rotate($deg);
+    -ms-transform : rotate($deg);
+     -o-transform : rotate($deg);
+        transform : rotate($deg);
+}

@@ -1,0 +1,1314 @@
+@import url(http://fonts.googleapis.com/css?family=Signika:700,400);
+
+body {
+	margin: 0;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	   -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+	        
+	&.home {
+		background-image: url(bg-home.jpg);
+	}
+	
+	&.formation {
+		background-image: url(bg-formation.jpg);
+		
+		&.gea {
+			background-image: url(bg-gea.jpg);
+		}
+		&.gim {
+			background-image: url(bg-gim.jpg);
+		}
+		&.rt {
+			background-image: url(bg-rt.jpg);
+		}
+		&.cj {
+			background-image: url(bg-cj.jpg);
+		}
+	}
+	&.vie-etudiante {
+		background-image: url(bg-vie-etudiante.jpg);
+	}
+	&.espace-entreprises {
+		background-image: url(bg-espace-entreprises.jpg);
+	}
+	&.activites-recherche {
+		background-image: url(bg-activites-recherche.jpg);
+	}
+	&.iut-saintmalo {
+		background-image: url(bg-iut-saintmalo.jpg);
+	}
+}
+
+.pattern {
+	width: 100%;
+	background: url(dot-pattern.png) top left repeat;
+	padding-top: 20px;
+}
+
+body:before {
+	/* TODO : 
+		- Supprimer avant mise en prod
+	---------------------------------------------*/
+/* 	content: "960px"; */
+}
+
+#global-container {
+	/* TODO
+		- Activer avant mise en prod
+	---------------------------------------------*/
+	position: relative;
+}
+
+/* ==========================================================================
+   Home Slider
+   ========================================================================== */
+
+#slider {
+	/* TODO
+		- Faire apparaitre en grisé le suivant
+		- Cadrer la taille
+	---------------------------------------------*/
+	padding-top: 80px;
+	margin-right: 100px;
+	
+	article {
+		width: 450px;
+		height: 450px;
+		margin: 0 auto;
+		background-color: rgba(29,184,237,.4);
+		@include rotate(45deg);
+		
+		.unrotate {
+			@include rotate(-45deg);
+			position: relative;
+		}
+		
+		p {
+			font-family: 'Signika', sans-serif;
+			color: #fff;
+			margin: 0;
+			text-align: center;
+					
+			&.loud {
+				font-weight: bold;
+				font-size: 4.8em;
+				line-height: 1em;	
+			}
+			&.thin {
+				font-size: 1.5em;
+				line-height: 1.5em;
+/* 				margin-left: 100px; */
+			}
+			&:first-child {
+/* 				padding-top: 60px; */
+			}
+			&.mascotte {
+				width: 140px;
+				margin: 0 auto;
+				img {
+					margin-top: 10px;
+					max-width: 100%;
+				}
+			}	
+		}
+		
+		&.energie-malouine .unrotate {
+			top: 80px;
+			left: 20px;
+		}
+		
+		&.alternance .unrotate {
+			top: 120px;
+			left: 60px;
+			
+			.mascotte {
+				width: 200px;
+			}
+		}
+		
+		&.apprentissage .unrotate {
+			top: 140px;
+			left: 30px;
+		}
+		
+		&.jpo {
+			background-color: rgba(226,22,107,.4);
+			.unrotate {
+				top: 70px;
+				left: 40px;
+				
+				.mascotte {
+					width: 200px;
+				}
+			}
+		}
+		
+		/*
+&.energie-malouine {
+			background-color: rgba(29,184,237,.4);
+			
+			.unrotate {
+				top: 120px;
+			}
+		}
+		
+		&.alternance  {
+			background-color: rgba(132,180,30,.4);
+			
+			.unrotate {
+				top: 160px;
+			}
+		}
+		
+		&.apprentissage  {
+			background-color: rgba(226,22,107,.4);
+			
+			.unrotate {
+				top: 180px;
+			}
+		}
+		&.jpo {
+			background-color: rgba(252,175,15,.4);
+			
+			.unrotate {
+				top: 120px;
+			}
+		}
+*/
+	}	
+}
+
+
+/* ==========================================================================
+   Menu
+   ========================================================================== */
+
+#menu-container {
+	/* TODO
+		- Filtre noir sur le contenu de la page au survol
+		- Apparition de l'image sur le côté du bandeau
+		- Choix des couleurs principales des catégories
+		- Rendre fonctionnel le mobile-menu
+	---------------------------------------------*/
+	width: $menu-width;
+	margin-right: 1px;
+	position: fixed;
+	z-index: 10;
+
+	.logo {
+		margin: 0;
+		
+		a {
+			display: block;
+			width: 150px;
+			height: 150px;
+			padding: 10px 20px;
+			background: url(logo-iut-saintmalo.png) center center no-repeat rgba(190, 190, 190, 0.65);
+			
+			.home & {
+				background-color: rgba(190, 190, 190, 0.65);
+			}
+		}
+	}
+	
+	.desktop-menu {
+		@include reset-list;
+		position: relative;
+		margin-top: 1px;
+		
+		li {
+			margin-bottom: 1px;
+			
+			a {
+				display: block;
+				padding: 12px 20px;
+				text-decoration: none;
+				color: rgb(51,51,51);;
+				background-color: rgba(240,240,240, 1);
+				
+				.home & {
+					background-color: rgba(240,240,240, 1);
+				}
+			
+				.formation &.formations, .vie-etudiante &.vie-etudiante, .espace-entreprises &.espace-entreprises, .activites-recherche &.activites-recherche, .iut-saintmalo &.iut-saintmalo, &.active, &:hover {
+					background-color: rgba(255, 255, 255, 1);
+				}
+			}
+			
+			.submenu {
+				height: 229px;
+				padding: 0;
+/* 				padding-right: 250px; */
+				position: absolute;
+				top: 0;
+				left: $menu-width + 1;
+				display: table;
+				visibility: hidden;
+				opacity: 0;
+				@include transition(all .2s .2s ease);
+				@include box-shadow(10px 10px 30px);
+				background: #fff;
+				
+				li {
+					display: table-cell;
+					min-width: $menu-width;
+					font-size: 12px;
+					
+					a {
+						display: block;
+						padding: 15px 20px 14px 14px;
+						margin-bottom: 1px;
+						font-weight: bold;
+						background-color: rgba(255, 255, 255, 0.4);
+						
+						&:hover {
+							background: #ddd;
+						}
+						
+						&.no-link:hover {
+							background: rgba(255, 255, 255, 0.4);
+							cursor: default;
+						}
+					}
+					
+					ul {
+						@include reset-list;
+						
+						li {
+							display: block;
+							background: #ddd;
+							border-left: 3px solid;
+							margin-right: 1px;
+							
+							@include menu-color;
+							
+							span.acronyme {
+								display: inline;
+								color: #000;
+							}
+							
+							a {
+								min-height: 35px;
+								line-height: 17px;
+								padding: 5px 6px;
+								color: #666;
+								font-weight: 100;
+							}
+							
+							&:hover > a, &:hover > a > .acronyme {
+								color: #fff;
+								background: transparent;
+							}
+							
+						}
+					}
+				}
+			}
+			
+			&:hover > .submenu, &:hover > .submenu {
+				visibility: visible;
+				opacity: 1;
+				-webkit-transition: opacity .2s .2s ease;
+			}
+			&:hover > body {
+/* 				background: pink; */
+			}
+		}
+	}
+	
+	.mobile-menu {
+		display: none;
+	}
+}
+
+/* ==========================================================================
+   Main
+   ========================================================================== */
+
+#main-container {
+	/* TODO
+		- Choisir les couleurs principales des catégories
+		- Gérer le partage sur les réseaux sociaux
+		- Gérer la css "print"
+	---------------------------------------------*/
+	margin-left: $menu-width + 1;
+	
+	/*
+.home & {
+		margin: 0;
+	}
+	
+*/
+	#content {
+		width: 560px;
+		float: left;
+		
+		header {
+			height: 120px;
+			margin-bottom: 1px;
+			
+			@include iut-background-color;
+			
+			h1 {
+				display: table;
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				color: #fff;
+				
+				span {
+				
+					&.title, &.subtitle {
+						display: table-cell;
+						vertical-align: bottom;
+						padding: 0 10px;
+						padding-bottom: 10px;
+						font-weight: 100;
+					}
+					
+					&.title {
+						width: 25%;
+						border-right: 1px solid #fff;
+						font-size: .8em;
+						
+						.formation & {
+							line-height: 1em;
+							font-size: 2em;
+						}
+					}
+					&.subtitle {
+						line-height: 1.2em;
+						font-size: 1.1em;
+						
+						.formation & {
+							font-size: 0.69em;
+							line-height: 1.6em;
+						}
+					}
+				}
+			}
+		}
+		
+		nav {
+			margin-bottom: 1px;
+			background: #fff;
+			
+			.breadcrumb {
+				@include reset-list;
+				padding: 4px 15px;
+				margin: 0 0 1px 0;
+				
+				li {
+					display: inline-block;
+					line-height: 10px;
+					font-size: 0.65em;
+					
+					&, a {color: #bbb;}
+					a {text-decoration: underline;}
+				}
+			}
+		}
+		
+		article {
+			padding: 20px;
+			padding-bottom: 160px;
+			background: #fff;
+			text-align: justify;
+			
+			#share {
+				margin-bottom: 30px;
+				float: right;
+				display: none;
+			}
+			
+			p:first-child {
+/* 				margin-top: 120px; */
+			}
+			
+			.gea & {
+				background: url(logo-gea.jpg) bottom right no-repeat #fff;
+			}
+			.gim & {
+				background: url(logo-gim.jpg) bottom right no-repeat #fff;
+			}
+			.rt & {
+				background: url(logo-rt.jpg) bottom right no-repeat #fff;
+			}
+			.cj & {
+				background: url(logo-cj.jpg) bottom right no-repeat #fff;
+			}
+			.cpclg & {
+				background: url(logo-cpclg.jpg) bottom right no-repeat #fff;
+			}
+			.cbsi & {
+				background: url(logo-cbsi.jpg) bottom right no-repeat #fff;
+			}
+			.asur & {
+				background: url(logo-asur.jpg) bottom right no-repeat #fff;
+			}
+			.mgri & {
+				background: url(logo-mgri.jpg) bottom right no-repeat #fff;
+			}
+			.rsfs & {
+				background: url(logo-rsfs.jpg) bottom right no-repeat #fff;
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Aside
+   ========================================================================== */
+
+#aside {
+	/* TODO
+		- Gestion des différentes tailles responsive
+	---------------------------------------------*/
+	min-width: $menu-width;
+	max-width: $menu-width * 2 - 1;
+	margin-left: 570px;
+	padding-top: 121px;
+	
+	#first, #second {
+		max-width: $menu-width;
+		float: left;
+	}
+}
+
+#access-course {
+	background: #fff;
+	
+	span {
+		line-height: 2em;
+		margin-left: 5px;
+	}
+	
+	ul {
+		@include reset-list;
+		font-size: 0;
+		margin-left: 1px;
+		
+		li {
+			display: inline-block;
+			width: 62px;
+			height: 62px;
+			margin: 0 1px 1px 0;
+			text-align: center;
+			@include iut-background-color;
+			
+			a {
+				display:block;
+				color: #fff;
+				font-size: 1.5rem;
+				line-height: 2.6em;
+				margin: 0;
+			}
+		}
+	}
+}
+
+#conditions-admission {
+	padding: 10px 0;
+	font-size: 1.3em;
+	text-align: right;
+	color: #fff;
+	@include iut-background-color;
+	
+	a {
+		display: block;
+		margin: 0 10px;
+		color: #fff;
+	}
+}
+
+#referent {
+	background: $black-neutral-color;
+	color: #fff;
+	text-align: center;
+	padding-bottom: 2px;
+	
+	#coordonnees {
+		padding: 3px;
+	}
+	
+	span {
+		display: block;
+		font-size: .95em;
+		
+		&.mail {
+			font-size: 0.8em;
+			line-height: 2em;
+		}
+	}
+}
+
+#temoignage {
+	background: $temoignage-color;
+	
+	span {
+		line-height: 2em;
+		margin-left: 5px;
+		color: #fff;
+		
+		&.abstract {
+			display: block;
+			padding: 10px;
+/* 			padding: 60px 90px 30px 10px; */
+		}
+	}
+	
+	img {
+		display: none;
+		margin: 0 auto;
+	}
+}
+
+#aside-menu {
+	ul {
+		@include reset-list;
+		
+		li {
+			margin-bottom: 1px;
+			
+			a {
+				display: block;
+				padding: 12px 15px;
+				color: #000;
+				background: #fff;
+				font-size: 0.77em;
+				
+				&.current {
+					font-weight: bold;
+					font-size: 0.77em;
+					@include iut-color;
+				}
+				
+				&:before {
+					content: '> ';
+				}
+				
+				&:hover, &:active {
+					background: #ddd;
+				}
+			}
+		}
+	}
+}
+
+.widget {
+	margin-bottom: 10px;
+	width: $menu-width;
+	
+	ul {
+		@include reset-list;
+		margin: 0;
+		padding: 0;
+		
+		li {
+			margin: 0;
+			padding: 0;
+		}
+	}
+	
+	.modal {
+	
+		.modal-header {
+			
+			h3 {
+				@include iut-color;
+				font-size: 0.95em;
+			}
+		}
+		
+		.modal-body {
+			text-align: left;
+			color: #000;
+			font-size: 0.7em;
+			
+			ul {
+				padding-left: 1.8em;
+				list-style: disc;
+				
+				li {
+					list-style-type: disc;
+					display: list-item;
+				}
+			}
+			
+			a {
+				color: #000 !important;
+				margin: 0 !important;
+				display: inline !important;
+			}
+		}
+		
+		.modal-footer {
+/* 			background: pink; */
+		}
+	}
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+#footer {
+	/* TODO
+		- Le rendre plus visible
+		- Ajouter les mentions légales & crédits
+	---------------------------------------------*/
+	clear: both;
+	width: 560px;
+	margin-left: $menu-width + 1;
+	
+	.home & {
+		display: none;
+	}
+	
+	footer {
+		width: 100%;
+		margin: 10px 0 60px 0;
+		background: rgba(255,255,255,0.6);
+		
+		.footer-menu {
+			display: table;
+			padding: 10px;
+			width: 100%;
+				
+			div {
+				display: table-cell;
+				width: 33%;
+				padding-left: 20px;
+				
+				h1 {
+					font-size: 0.8em;
+					text-transform: uppercase;
+					margin: 20px 0 5px 0;
+				}
+				
+				ul {
+					@include reset-list;
+					margin: 0;
+					
+					.social {
+						padding-left: 24px;
+						background-image: url(social.sprite.png);
+						background-repeat: no-repeat;
+						
+						&.facebook {
+							background-position: 0 0;
+						}
+						&.twitter {
+							background-position: 0 -26px;
+						}
+						&.flickr {
+							background-position: 0 -52px;
+						}
+						&.youtube {
+							background-position: 0 -78px;
+						}
+					}
+				}
+				
+				a, span {
+					font-size: 0.8em;
+					color: rgb(51, 51, 51); 
+				}
+				span {
+					display: block; 
+					line-height: 1.84em;
+					padding: 0;
+					
+					&.telephone {
+						margin-top: 10px;
+					}
+				}
+			}
+		}
+		
+		.links {
+			width: 100%;
+			height: 20px;
+			padding-bottom: 10px;
+			
+			ul {
+				@include reset-list;
+				margin: 0;
+				padding: 0 10px;
+				float: right;
+				
+				li {
+					display: inline-block;
+					font-size: .7em;
+					color: #666;
+					
+					&.item {
+						padding-right: 5px;
+						border-right: 1px solid #666;
+					}
+					
+					a {
+						color: #666;
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+#top-page-link {
+	display: none;
+}
+
+/* ==========================================================================
+   Site dock
+   ========================================================================== */
+
+#site-dock {
+	/* TODO
+		- Activer les survols
+		- Désactiver la fonction de recherche
+	---------------------------------------------*/
+	width: 100%;
+	height: $site-dock-height;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	overflow: visible;
+	background: url(dock.50.png) center center repeat-x;
+	@include box-shadow(0 0 30px);
+	
+	.home & {
+		height: 0;
+	}
+	
+	nav {
+		
+		ul {
+			@include reset-list;
+			font-size: 0em;			
+			
+			li {
+				display: inline-block;
+				height: $site-dock-height;
+				border-right: 1px solid #ccc;
+				width: 110px;
+				
+				a {
+					display: block;
+					height: $site-dock-height - 18;
+					padding-top: 18px;
+					text-align: center;
+					color: #fff;
+					font-size: 12px;
+				}
+				
+				&.facebook, &.twitter, &.search {
+					width: 60px;
+				}
+				
+				&.facebook {
+					a {
+						background-image: url(facebook.dock.50.png);
+					}
+				}
+				
+				&.twitter {
+					a {
+						background-image: url(twitter.dock.50.png);
+					}
+				}
+				
+				&.search {
+					a {
+						background-image: url(search.dock.50.png);
+					}
+				}
+				
+				&.univ-rennes1 {
+					width: 130px;
+					a {
+						background-image: url(univ-rennes1.dock.100.png);
+					}
+					.dock-content {
+						width: 112px;
+						background: whiteSmoke;
+					}
+				}
+				
+				&.facebook, &.twitter, &.search, &.univ-rennes1 {
+					a {
+						background-position: top center;
+						background-repeat: no-repeat;
+
+						&:hover {
+							background-position-y: bottom;
+						}
+						
+						span {
+							position: relative;
+							top: -2000px;
+							left: -2000px;
+						}
+					}
+				}
+				
+				&.season {
+					position: fixed;
+					right: 0;
+					width: 220px;
+					background: yellow;
+					
+					a {
+						background-image: url(season.dock.50.png);
+						background-repeat: no-repeat;
+						color: #000;
+						padding-left: 25px;
+						font-weight: bold;
+					}
+					
+					.dock-content {
+						margin-left: 25px;
+						width: 180px;
+						a {
+							background: none;
+							margin-top: 10px;
+						}
+					}			
+				}
+
+				.dock-content {
+					display: none;
+					float: left;
+					position: absolute;
+					top: auto;
+					bottom: 100%;
+					margin-left: -1px;
+					padding: 0 10px;
+					background: #fff;
+					color: #000;
+					
+					p {
+						font-size: 12px;
+					}
+					
+					a {
+						background: none;
+						margin: 0;
+						padding: 0;
+						height: auto;
+						color: #000;
+					}
+					
+					ul {
+						@include reset-list;
+						
+					}
+				}	
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+
+/*************************************/
+/*************************************/
+/*************************************/
+
+/* Note: Design for a min-width of 1152 */
+
+@media only screen and (min-width: 1152px)
+{
+	body:before {
+/* 		content: "1152px"; */
+	}
+	
+	#aside {
+		min-width: $menu-width * 2 + 10;
+	}
+	#second {
+		margin-left: 10px;
+	}
+
+}
+
+/*************************************/
+/*************************************/
+/*************************************/
+
+/* Note: Design for a min-width of 1260 */
+
+@media only screen and (min-width: 1260px)
+{
+	body:before {
+/* 		content: "1260px"; */
+	}	
+
+	#content, #footer {
+		min-width: 630px;
+	}
+	
+	#aside {
+		margin-left: $menu-width + 450px;
+	}
+	
+}
+
+/*************************************/
+/*************************************/
+/*************************************/
+
+/* Note: Design for a min-width of 1420 */
+
+@media only screen and (min-width: 1420px)
+{
+	body:before {
+/* 		content: "1404px"; */
+	}
+
+	#content, #footer {
+		min-width: 770px;
+	}
+	
+	#aside {
+		margin-left: $menu-width + 590px;
+	}
+
+}
+
+/*************************************/
+/*************************************/
+/*************************************/
+
+/* Note: Design for a width of 768px */
+
+@media only screen and (max-width: 959px)
+{
+	body:before {
+/* 		content: "756px"; */
+	}
+	
+	#aside {
+		margin: 0;
+		max-width: 560px;
+		
+		#first, #second {
+			min-width: 560px;
+		}
+	}
+	
+	.widget {
+		margin-top: 10px;
+		float: left;
+	}
+	
+	#conditions-admission {
+		margin-left: 10px;
+		width: 130px;
+		text-align: left;
+	}
+	
+	#referent {
+		margin-left: 10px;
+		width: 220px;
+		height: 155px;
+		padding:0;
+		
+		img {
+			float: right;
+			max-width: 100%;
+			max-height: 100%;
+		}
+		
+		#coordonnees {
+			padding-top: 10px;
+			
+			span {
+				font-size: 0.8em;
+				line-height: 2em;
+			}
+		}
+	}
+	
+	#temoignage {
+		height: 125px;
+		padding: 0;
+		
+		span {
+			display: none;
+			
+			&.abstract {
+				display: block;
+				float: left;
+				width: 200px;
+				padding: 10px;
+			}
+		}
+		
+		img {
+			float: left;
+			max-width: 100%;
+			max-height: 100%;
+		}
+		
+		
+	}
+	
+	#aside-menu {
+		width: 100%;
+	}
+}
+
+.sitemap #content {
+	
+} 
+
+
+/*************************************/
+/*************************************/
+/*************************************/
+
+/* Note: Design for a width of 480px & 320px */
+	
+@media only screen and (max-width: 767px)
+{
+
+	body:before {
+/* 		content: "max 767px"; */
+	}
+	#global-container {
+		width: 440px;
+		margin: 0 auto;
+	}
+	
+	#slider {
+		
+		article {
+			width: 250px;
+			height: 250px;
+		
+			p {
+				&.loud {
+					font-size: 2em;
+				}
+				&.thin {
+					font-size: 1.2em;
+				}
+				&.mascotte {
+					display: none;
+				}
+			}
+			
+			&.energie-malouine .unrotate {
+				left: 0px;
+				top: 90px;
+			}
+			&.alternance .unrotate {
+				top: 90px;
+				left: 10px;
+			}
+			&.apprentissage .unrotate {
+				top: 100px;
+			}
+			&.jpo .unrotate {
+				top: 90px;
+				left: 0px;
+			}
+		}
+		
+		.carousel-control {
+			display: none;
+		}
+	}
+	
+	#menu-container {
+		position: inherit;
+		margin: 0 auto;
+		
+		
+		.desktop-menu {
+			display: none;
+		}
+	
+		.mobile-menu {
+			display: block;
+			width: 100%;
+			margin: 10px 0;
+		}
+	}
+	
+	#main-container {
+		margin: 0;
+		
+		#content {
+			width: 100%;
+		}
+		
+		#aside, #first, #second {
+			max-width: 100%;
+			min-width: 100%;
+		}
+		
+		#access-course {
+			width: 316px;
+		}
+		
+		#conditions-admission {
+			width: 94px;
+			height: 71px;
+			font-size: 1em;
+			padding: 10px;
+			
+			a {
+				width: 100%;
+				height: 100%;
+				padding-top: 27px;
+			}
+		}
+		
+		#referent {
+			width: 100%;
+			margin-left: 0;
+			margin-top: 0;
+			margin-bottom: 0;
+			font-size: 1.2em;
+		}
+		
+		#temoignage {
+			margin-top: 10px;
+			
+			.abstract {
+				width: 140px;
+				font-size: 0.9em;
+			}
+		}
+	}
+	
+	#footer {
+		margin: 0;
+		width: 100%;
+		font-size: 0.95em;
+		
+		#contact span {
+			line-height: 1.7em;
+		}
+		     
+	}
+	#site-dock {
+		display: none;
+	}
+	
+	.modal {
+    	position: fixed !important;
+    	top: 200px !important;
+    	right: 20px !important;
+    	left: 20px !important;
+    	width: auto !important;
+    	margin: 0 !important;
+    }
+    
+    .modal.fade {
+    	top: -100px !important;
+    }
+    
+    .modal.fade.in {
+	    top: 20px !important;
+	}
+}
+
+
+/*************************************/
+/*************************************/
+/*************************************/
+
+/* Note: Design for a width of 480px */
+ 
+@media only screen and (max-width: 480px)
+{
+	body:before {
+/* 		content: "320px"; */
+}
+
+	#global-container {
+		width:320px;
+	}
+	
+	.breadcrumb {
+		display: none;
+	}
+	
+	.title {
+		font-size: .6em !important;
+		
+		.formation & {
+			font-size: 1.5em !important;
+		}
+	}
+	
+	.subtitle {
+		font-size: .8em !important;
+		line-height: 1.35em !important;
+		
+		.formation & {
+			font-size: .6em !important;
+		}
+	}
+	
+	#access-course {
+		float: none;
+		min-width: 100%;
+		
+		.typologies-formations {
+			margin-left: 3px;
+		}
+	}
+	#conditions-admission {
+		margin-left:0;
+		margin-top: 0;
+		min-width: 100%;
+		padding: 10px 0 !important;
+		height: 20px !important;
+		
+		a {
+			padding: 0 !important;
+		}
+	}
+	#temoignage {	
+		.abstract {
+			max-width: 100px;
+			font-size: 0.7em !important;
+		}
+	}
+	#footer .footer-menu, #footer .footer-menu div {
+		display: block !important;
+		margin: 0 auto;
+		padding: 4px 0 !important;
+	}
+	
+	#footer .footer-menu div {
+		width: 80% !important;
+		text-align: center;
+		
+		.social {
+			width: 50px;
+			margin: 0 auto;
+		}
+		
+		
+	}
+	#contact .telephone {
+		margin-top: 0 !important;
+		}
+}
+
+
