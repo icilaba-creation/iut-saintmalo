@@ -1,0 +1,10 @@
+/* TEAM */
+Your title: Icilaba Creation.
+Site: http://www.icilaba-creation.com.    
+Location: Rennes, France.
+                            
+/* SITE */                        
+Last update: 2013/01                            
+Standards: HTML5, CSS3
+Components: Modernizr, jQuery, Twitter Bootstrap
+Software: Coda 2, CodeKit, Hammer for Mac
