@@ -148,41 +148,12 @@ body:before {
 			}
 		}
 		
-		/*
-&.energie-malouine {
-			background-color: rgba(29,184,237,.4);
-			
-			.unrotate {
-				top: 120px;
-			}
+		&.error404 .unrotate {
+			top: 120px;
+			left: 20px;
 		}
-		
-		&.alternance  {
-			background-color: rgba(132,180,30,.4);
-			
-			.unrotate {
-				top: 160px;
-			}
-		}
-		
-		&.apprentissage  {
-			background-color: rgba(226,22,107,.4);
-			
-			.unrotate {
-				top: 180px;
-			}
-		}
-		&.jpo {
-			background-color: rgba(252,175,15,.4);
-			
-			.unrotate {
-				top: 120px;
-			}
-		}
-*/
 	}	
 }
-
 
 /* ==========================================================================
    Menu
@@ -409,7 +380,7 @@ body:before {
 					font-size: 0.65em;
 					
 					&, a {color: #bbb;}
-					a {text-decoration: underline;}
+					a {text-decoration: none;cursor: default;}
 				}
 			}
 		}
@@ -613,42 +584,38 @@ body:before {
 			margin: 0;
 			padding: 0;
 		}
+	}	
+}
+
+.modal {
+
+	.modal-header {
+		
+		h3 {
+			@include iut-color;
+			font-size: 15px;
+		}
 	}
 	
-	.modal {
-	
-		.modal-header {
+	.modal-body {
+		text-align: left;
+		color: #000;
+		font-size: 13px;
+		
+		ul {
+			padding-left: 1.8em;
+			list-style: disc;
 			
-			h3 {
-				@include iut-color;
-				font-size: 0.95em;
+			li {
+				list-style-type: disc;
+				display: list-item;
 			}
 		}
 		
-		.modal-body {
-			text-align: left;
-			color: #000;
-			font-size: 0.7em;
-			
-			ul {
-				padding-left: 1.8em;
-				list-style: disc;
-				
-				li {
-					list-style-type: disc;
-					display: list-item;
-				}
-			}
-			
-			a {
-				color: #000 !important;
-				margin: 0 !important;
-				display: inline !important;
-			}
-		}
-		
-		.modal-footer {
-/* 			background: pink; */
+		a {
+			color: #000 !important;
+			margin: 0 !important;
+			display: inline !important;
 		}
 	}
 }
