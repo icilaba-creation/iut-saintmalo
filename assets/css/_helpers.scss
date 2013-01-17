@@ -73,6 +73,41 @@ ul ul {
 	list-style-type: circle;
 }
 
+/* Medias */
+.media {
+	padding-top: 20px;
+	
+	&.left {
+		float: left;
+		padding-right: 20px;
+		@media only screen and (max-width: 767px) {
+			padding-right: 0;
+		}
+	}
+			
+	@media only screen and (max-width: 767px) {
+		float: none !important;
+		margin: 0 auto;
+		padding-top: 0;
+	}
+	
+}
+
+.image {
+
+	img {
+		max-width: 100%;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		
+		@media only screen and (max-width: 480px) {
+			display: block;
+			margin: 0 auto;
+		}
+	}	
+}
+
 /* Table */
 table {
   max-width: 100%;
