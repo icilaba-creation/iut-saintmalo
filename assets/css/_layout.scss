@@ -386,10 +386,13 @@ body:before {
 		}
 		
 		article {
-			padding: 20px;
-			padding-bottom: 160px;
+			padding: 20px 0;
 			background: #fff;
 			text-align: justify;
+			
+			.formation & {
+				padding-bottom: 160px;
+			}
 			
 			#share {
 				margin-bottom: 30px;
@@ -397,8 +400,8 @@ body:before {
 				display: none;
 			}
 			
-			p:first-child {
-/* 				margin-top: 120px; */
+			p {
+				margin: 10px 20px;
 			}
 			
 			.gea & {
