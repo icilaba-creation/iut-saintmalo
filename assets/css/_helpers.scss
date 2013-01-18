@@ -76,12 +76,15 @@ ul ul {
 /* Medias */
 .media {
 	padding-top: 20px;
+	font-size: 0;
 	
 	&.left {
 		float: left;
 		padding-right: 20px;
+		margin-left: 20px;
 		@media only screen and (max-width: 767px) {
 			padding-right: 0;
+			margin-left: 0;
 		}
 	}
 			
@@ -188,7 +191,7 @@ table {
 
 /* Accordion */
 .accordion {
-	margin-bottom: 20px;
+	margin: 0 20px 20px 20px;
 	
 	.accordion-group {
 		margin-bottom: 10px;
@@ -221,6 +224,10 @@ table {
 				padding: 9px 20px;
 			}
 		}
+	}
+	
+	p {
+		margin: 10px 0 !important;
 	}
 }
 

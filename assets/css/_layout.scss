@@ -389,9 +389,10 @@ body:before {
 			padding: 20px 0;
 			background: #fff;
 			text-align: justify;
+			padding-bottom: 160px;
 			
-			.formation & {
-				padding-bottom: 160px;
+			.no-padding & {
+				padding-bottom: 20px;
 			}
 			
 			#share {
@@ -400,7 +401,7 @@ body:before {
 				display: none;
 			}
 			
-			p {
+			p, ul, ol {
 				margin: 10px 20px;
 			}
 			
