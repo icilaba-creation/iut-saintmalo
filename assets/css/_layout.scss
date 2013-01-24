@@ -118,22 +118,23 @@ body:before {
 		}
 		
 		&.energie-malouine .unrotate {
-			top: 80px;
-			left: 20px;
+			top: 130px;
+			left: 0px;
+			
 		}
 		
-		&.alternance .unrotate {
-			top: 120px;
-			left: 60px;
+		&.formation-initiale .unrotate {
+			top: 100px;
+			left: 30px;
 			
-			.mascotte {
-				width: 200px;
+			.loud {
+				font-size: 4.5em;
 			}
 		}
 		
-		&.apprentissage .unrotate {
-			top: 140px;
-			left: 30px;
+		&.alternance .unrotate {
+			top: 130px;
+			left: 35px;
 		}
 		
 		&.jpo {
@@ -239,11 +240,6 @@ body:before {
 						
 						&:hover {
 							background: #ddd;
-						}
-						
-						&.no-link:hover {
-							background: rgba(255, 255, 255, 0.4);
-							cursor: default;
 						}
 					}
 					
@@ -380,7 +376,7 @@ body:before {
 					font-size: 0.65em;
 					
 					&, a {color: #bbb;}
-					a {text-decoration: none;cursor: default;}
+					a {text-decoration: underline;}
 				}
 			}
 		}
@@ -388,11 +384,11 @@ body:before {
 		article {
 			padding: 20px 0;
 			background: #fff;
-			text-align: justify;
+			text-align: left;
 			padding-bottom: 160px;
 			
 			.no-padding & {
-				padding-bottom: 20px;
+				padding-bottom: 0px;
 			}
 			
 			#share {

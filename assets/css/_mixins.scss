@@ -1,6 +1,9 @@
 // @include iut-background-color;
 
 @mixin iut-background-color {
+	.formation & {
+		background: $formation-color;
+	}
 	.gea & {
 		background: $gea-color;
 	}
@@ -33,6 +36,9 @@
 // @include iut-color;
 
 @mixin iut-color {
+	.formation & {
+		color: $formation-color;
+	}
 	.gea & {
 		color: $gea-color;
 	}
